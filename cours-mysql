@@ -1,0 +1,47 @@
+
+use automobile;
+CREATE TABLE cars (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+	content VARCHAR(255) NOT NULL,
+    price VARCHAR(255) NOT NULL,
+    image VARCHAR(255) NOT NULL,
+    kelometor INT(255) NOT NULL,
+    carburant_id INTEGER NOT NULL,
+    FOREIGN KEY(carburant_id ) REFERENCES carburant(id),
+    category_id INTEGER NOT NULL,
+	FOREIGN KEY(category_id ) REFERENCES category(id),
+    manufacturer_id INTEGER NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW(),
+    FOREIGN KEY(manufacturer_id) REFERENCES manufacturer(id)
+);
+use automobile ;
+create table manufacturer
+(id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+
+    use automobile ;
+create table carburant
+(id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+
+    use automobile ;
+create table category
+(id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+
+);
+USE automobile ;
+INSERT INTO carburant (name) VALUES ('Diesel'),('Essence'),('Hybride');
+
+USE automobile ;
+INSERT INTO category (name)
+ VALUES ('4x4,U ',('Berlin'),('Break'),('Break'),('Cabriolet'),('Citadine'),('Coupé'),('Sans permis');
+
+ USE automobile ;
+INSERT INTO manufacturer(name) 
+ VALUES ('Renault '),('Clio'),('Peugeot'),('Open'),('Cabriolet'),('Twingo'),('Volvo');
+
+ USE automobile;
+INSERT INTO cars (name,content, price, image, kelometor,carburant_id,category_id, manufacturer_id)
+ VALUES ('Renault',' toutes options état neuf','120000 ','https://image.lacentrale.fr/260x195','40000','1',2,'3');
