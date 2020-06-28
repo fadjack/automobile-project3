@@ -6,9 +6,9 @@ CREATE TABLE cars (
 	content VARCHAR(255) NOT NULL,
     price VARCHAR(255) NOT NULL,
     image VARCHAR(255) NOT NULL,
-    kelometor INT(255) NOT NULL,
-    carburant_id INTEGER NOT NULL,
-    FOREIGN KEY(carburant_id ) REFERENCES carburant(id),
+    kilometre INT(255) NOT NULL,
+    fuel_id INTEGER fuel_id NOT NULL,
+    FOREIGN KEY(carburant_id ) REFERENCES fuel(id),
     category_id INTEGER NOT NULL,
 	FOREIGN KEY(category_id ) REFERENCES category(id),
     manufacturer_id INTEGER NOT NULL,
@@ -18,30 +18,44 @@ CREATE TABLE cars (
 use automobile ;
 create table manufacturer
 (id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL
+    name VARCHAR(255) NOT NULL);
 
     use automobile ;
-create table carburant
+create table fuel
 (id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL
+    name VARCHAR(255) NOT NULL);
 
     use automobile ;
 create table category
 (id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL
+    name VARCHAR(255) NOT NULL);
 
 );
+
+use automobiles 
+create table users
+(user_id INT AUTO_INCREMENT NOT NULL,
+username VARCHAR (255) NOT NULL,
+role VARCHAR(255) NOT NULL,
+status VARCHAR(255) NOT NULL,
+email VARCHAR (100) unique  not NULL,
+password VARCHAR(50) not null);
+
 USE automobile ;
 INSERT INTO carburant (name) VALUES ('Diesel'),('Essence'),('Hybride');
 
 USE automobile ;
 INSERT INTO category (name)
- VALUES ('4x4,U ',('Berlin'),('Break'),('Break'),('Cabriolet'),('Citadine'),('Coupé'),('Sans permis');
+ VALUES ('4x4,Suv '),('Citadine'),('Coupé'),('Sans permis');
 
  USE automobile ;
 INSERT INTO manufacturer(name) 
  VALUES ('Renault '),('Clio'),('Peugeot'),('Open'),('Cabriolet'),('Twingo'),('Volvo');
 
  USE automobile;
-INSERT INTO cars (name,content, price, image, kelometor,carburant_id,category_id, manufacturer_id)
+INSERT INTO cars (name,content, price, image, kilometre,carburant_id,category_id, manufacturer_id)
  VALUES ('Renault',' toutes options état neuf','120000 ','https://image.lacentrale.fr/260x195','40000','1',2,'3');
+
+ USE automobile ;
+INSERT INTO users (username,email,password) VALUES ('adeline'),('adeline@gmail.com'),('123');
+

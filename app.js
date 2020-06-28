@@ -5,11 +5,15 @@ const path = require('path');
 const app = express();
 const session = require('express-session');
 
-const port = 5000;
+const port = 3000;
+
+
 
 // Middleware
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
+
+
 
 app.set('port', process.env.port || port);
 // app.set('views', __dirname + '/views');
@@ -18,12 +22,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload());
 
 
+
+// Express-session
+app.use(session({
+    secret: 'shhuuuuut',
+    resave: false,
+    saveUninitialized: true,
+    name: 'biscuit',
+    cookie: { maxAge: 60000 }
+  }))
+
 // MySQL
 const db = mysql.createConnection ({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'automobile',
+    database: 'automobiles',
+    port:'3307',
     multipleStatements: true
 });
 
@@ -33,23 +48,48 @@ db.connect((err) => {
 });
 global.db = db;
 
-// Front
-app.use('/', homeRoutes);
+
 
 // Controller
 const carsRoutes = require('./routes/car.route');
-const manufacturerRoutes = require('./routes/manufacturer.route');
-const homeRoutes = require('./routes/home');
+const manufacturersRoutes = require('./routes/manufacturer.route');
+const homeRoutes = require('./routes/home.route');
+const authRoutes = require('./routes/auth.route');
 
 
-app.use('/cars', carsRoutes);
-app.use('/manufacturer', manufacturerRoutes);
+// Middleware
+const auth = require("./middleware/auth.middleware")
+
+
+app.use('/car', carsRoutes);
+app.use('/manufacturer', manufacturersRoutes);
+
+// Front
+app.use('/', homeRoutes);
+
+// Authentification
+app.use('/auth',  authRoutes);
+
 app.get('*', function(req, res, next){
     res.status(404);
     res.render('404.ejs', {
         title: "Cette page n'existe pas.",
     });
 });
+
+
+
+
+// Admin
+//const adminRoutes = require('./routes/admin.route');
+
+
+
+
+
+// Admin
+//app.use('/admin', auth,  adminRoutes);
+
 
 
 // Listen

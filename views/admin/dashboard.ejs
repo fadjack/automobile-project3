@@ -1,0 +1,482 @@
+<%- include('../partials/admin/head.ejs') %>
+
+		<!--Global-Loader-->
+		<div id="global-loader">
+			<img src="../assets/images/icons/loader.svg" alt="loader">
+		</div>
+
+		<div class="page">
+			<div class="page-main">
+				<!--app-header-->
+
+<!--app-header-->
+<div class="app-header header hor-topheader d-flex">
+  <div class="container">
+    <div class="d-flex">
+        <a class="header-brand" href="index.html">
+        <img src="../assets/images/brand/logo.png" class="header-brand-img main-logo" alt="Hogo logo">
+        <img src="../assets/images/brand/icon.png" class="header-brand-img icon-logo" alt="Hogo logo">
+      </a><!-- logo-->
+      <a id="horizontal-navtoggle" class="animated-arrow hor-toggle"><span></span></a>
+      <a href="#" data-toggle="search" class="nav-link nav-link  navsearch"><i class="fa fa-search"></i></a><!-- search icon -->
+      <div class="header-form">
+        <form class="form-inline">
+          <div class="search-element mr-3">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            <span class="Search-icon"><i class="fa fa-search"></i></span>
+          </div>
+        </form><!-- search-bar -->
+      </div>
+  
+
+      <div class="d-flex order-lg-2 ml-auto header-rightmenu">
+        <div class="dropdown">
+          <a  class="nav-link icon full-screen-link" id="fullscreen-button">
+            <i class="fe fe-maximize-2"></i>
+          </a>
+        </div><!-- full-screen -->
+        <div class="dropdown header-notify">
+          <a class="nav-link icon" data-toggle="dropdown" aria-expanded="false">
+            <i class="fe fe-bell "></i>
+            <span class="pulse bg-success"></span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow ">
+            <a href="#" class="dropdown-item text-center">4 New Notifications</a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item d-flex pb-3">
+              <div class="notifyimg bg-green">
+                <i class="fe fe-mail"></i>
+              </div>
+              <div>
+                <strong>Message Sent.</strong>
+                <div class="small text-muted">12 mins ago</div>
+              </div>
+            </a>
+            <a href="#" class="dropdown-item d-flex pb-3">
+              <div class="notifyimg bg-pink">
+                <i class="fe fe-shopping-cart"></i>
+              </div>
+              <div>
+                <strong>Order Placed</strong>
+                <div class="small text-muted">2  hour ago</div>
+              </div>
+            </a>
+            <a href="#" class="dropdown-item d-flex pb-3">
+              <div class="notifyimg bg-blue">
+                <i class="fe fe-calendar"></i>
+              </div>
+              <div>
+                <strong> Event Started</strong>
+                <div class="small text-muted">1  hour ago</div>
+              </div>
+            </a>
+            <a href="#" class="dropdown-item d-flex pb-3">
+              <div class="notifyimg bg-orange">
+                <i class="fe fe-monitor"></i>
+              </div>
+              <div>
+                <strong>Your Admin Lanuch</strong>
+                <div class="small text-muted">2  days ago</div>
+              </div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item text-center">View all Notifications</a>
+          </div>
+        </div><!-- notifications -->
+        <div class="dropdown">
+          <a class="nav-link leading-none siderbar-link"  data-toggle="sidebar-right" data-target=".sidebar-right">
+            <span class="mr-3 d-none d-lg-block ">
+              <span class="text-gray-white"><span class="">Bonjour <%= firstname %></span></span>
+            </span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+            <div class="header-user text-center mt-4 pb-4">
+              <a href="#" class="dropdown-item text-center font-weight-semibold user h3 mb-0">Bonjour <%= firstname %></a>
+            </div>
+
+            <a class="dropdown-item" href="#">
+              <i class="dropdown-icon mdi mdi-account-outline "></i> Spruko technologies
+            </a>
+            <a class="dropdown-item" href="#">
+              <i class="dropdown-icon  mdi mdi-account-plus"></i> Add another Account
+            </a>
+            <div class="card-body border-top">
+              <div class="row">
+                <div class="col-6 text-center">
+                  <a class="" href=""><i class="dropdown-icon mdi  mdi-message-outline fs-30 m-0 leading-tight"></i></a>
+                  <div>Inbox</div>
+                </div>
+                <div class="col-6 text-center">
+                  <form action="auth/logout" method="post">
+                    <i class="dropdown-icon mdi mdi-logout-variant fs-30 m-0 leading-tight"></i>
+                    <button>Se déconnecter</button>
+                     
+                   </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- profile -->
+        <div class="dropdown">
+          <a  class="nav-link icon siderbar-link" data-toggle="sidebar-right" data-target=".sidebar-right">
+            <i class="fe fe-more-horizontal"></i>
+          </a>
+        </div><!-- Right-siebar-->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+				<!--app-header end-->
+
+				<!-- Horizontal-menu -->
+				<%- include('../partials/admin/menu.ejs') %>
+				<!--Header submenu -->
+		
+                <!-- app-content-->
+				<div class="container content-area">
+					<div class="side-app">
+
+					    <!-- page-header -->
+						<div class="page-header">
+							<ol class="breadcrumb"><!-- breadcrumb -->
+								<li class="breadcrumb-item"><a href="#">Accueil</a></li>
+								<li class="breadcrumb-item active" aria-current="page"><%= breadcrumb %></li>
+							</ol><!-- End breadcrumb -->
+					
+						</div>
+						<!-- End page-header -->
+
+
+			
+					
+
+						<div class="row">
+							<div class="col-xl-7 col-lg-12 col-md-12">
+								<div class="card">
+									<div class="card-header custom-header">
+										<div>
+											<h3 class="card-title">Click  Conversion</h3>
+											<h6 class="card-subtitle">Overview of Latest Month</h6>
+										</div>
+										<div class="card-options">
+											<a href="" class="mr-4 text-default" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+												<span class="fa fa-ellipsis-v"></span>
+											</a>
+											<ul class="dropdown-menu dropdown-menu-right" role="menu">
+												<li><a href="#"><i class="si si-plus mr-2"></i>Add</a></li>
+												<li><a href="#"><i class="si si-trash mr-2"></i>Remove</a></li>
+												<li><a href="#"><i class="si si-eye mr-2"></i>View</a></li>
+												<li><a href="#"><i class="si si-settings mr-2"></i>More</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="card-body">
+										<div>
+											<canvas id="conversion" class="chart-drop"></canvas>
+										</div>
+									</div>
+									<div class="card-footer">
+										<div class="row">
+											<div class="col-xl-3 col-lg-6 col-sm-6">
+												<div class="text-center mt-0">
+													<h5 class="mb-1 text-muted">Total Users</h5>
+													<h2 class="mb-0 mt-2 fs-2 text-dark mainvalue">1,653</h2>
+												</div>
+											</div>
+											<div class="col-xl-3 col-lg-6 col-sm-6">
+												<div class="text-center mt-4 mt-sm-0">
+													<h5 class="mb-1 text-muted">Total Leads</h5>
+													<h2 class="mb-0 mt-2 fs-2 text-dark mainvalue">639</h2>
+												</div>
+											</div>
+											<div class="col-xl-3 col-lg-6 col-sm-6">
+												<div class="text-center mt-4 mt-lg-0">
+													<h5 class="mb-1 text-muted">Total Trials</h5>
+													<h2 class="mb-0 mt-2 fs-2 text-dark mainvalue">12,765</h2>
+												</div>
+											</div>
+											<div class="col-xl-3 col-lg-6 col-sm-6">
+												<div class="text-center mt-4 mt-lg-0">
+													<h5 class="mb-1 text-muted">Total Wins</h5>
+													<h2 class="mb-0 mt-2 fs-2 text-dark mainvalue">24</h2>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-5 col-lg-12 col-md-12">
+								<div class="card">
+									<div class="card-header custom-header">
+										<div>
+											<h3 class="card-title">Active Users</h3>
+											<h6 class="card-subtitle">Users</h6>
+										</div>
+										<div class="card-options">
+											<a href="" class="mr-4 text-default" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+												<span class="fa fa-ellipsis-v"></span>
+											</a>
+											<ul class="dropdown-menu dropdown-menu-right" role="menu">
+												<li><a href="#"><i class="si si-plus mr-2"></i>Add</a></li>
+												<li><a href="#"><i class="si si-trash mr-2"></i>Remove</a></li>
+												<li><a href="#"><i class="si si-eye mr-2"></i>View</a></li>
+												<li><a href="#"><i class="si si-settings mr-2"></i>More</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-4">
+												<div class="chart-circle mt-2 mb-2" data-value="0.80" data-thickness="10" data-color="#1753fc">
+													<div class="chart-circle-value"><div class="fs-2">80% </div></div>
+												</div>
+											</div>
+											<div class="col-md-8">
+												<h4 class="mb-5">Active Users</h4>
+												<div class="mb-5">
+													<h5 class="mb-2 d-block">
+														<span class="fs-16"><b>74,526</b> Email Accounts</span>
+														<span class="float-right">80%</span>
+													</h5>
+													<div class="progress progress-md h-1">
+														<div class="progress-bar progress-bar-striped progress-bar-animated bg-primary w-80"></div>
+													</div>
+												</div>
+												<div class="mb-0">
+													<h5 class="mb-2 d-block">
+														<span class="fs-16"><b>14,526</b> Requests</span>
+														<span class="float-right">30%</span>
+													</h5>
+													<div class="progress progress-md h-1">
+														<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger w-30"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-8">
+												<h4 class="mb-5">Deactive Users</h4>
+												<div class="mb-5">
+													<h5 class="mb-2 d-block">
+														<span class="fs-16"><b>7,325</b> Email Accounts</span>
+														<span class="float-right">20%</span>
+													</h5>
+													<div class="progress progress-md h-1">
+														<div class="progress-bar progress-bar-striped progress-bar-animated bg-primary w-20"></div>
+													</div>
+												</div>
+												<div class="mb-0">
+													<h5 class="mb-2 d-block">
+														<span class="fs-16"><b>1,425</b> Directly</span>
+														<span class="float-right">30%</span>
+													</h5>
+													<div class="progress progress-md h-1">
+														<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger w-1"></div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="chart-circle mt-2" data-value="0.30" data-thickness="10" data-color="#e34a42">
+													<div class="chart-circle-value"><div class="fs-2">30% </div></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+			
+
+						<div class="row">
+							<div class="col-12">
+								<div class="card">
+									<div class="card-header ">
+										<h3 class="card-title ">Liste des joueurs</h3>
+										<div class="card-options">
+											<button id="add__new__list" type="button" class="btn btn-sm btn-primary " data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fa fa-plus"></i> Ajouter un joueur</button>
+										</div>
+									</div>
+									<div class="table-responsive">
+
+										<% if (players.length > 0) { %>
+
+										<table class="table card-table table-striped table-vcenter table-outline table-bordered text-nowrap ">
+											<thead>
+												<tr>
+													<th scope="col" class="border-top-0">ID</th>
+													<th scope="col" class="border-top-0">Prénom</th>
+													<th scope="col" class="border-top-0">Nom</th>
+													<th scope="col" class="border-top-0">Position</th>
+													<th scope="col" class="border-top-0">Numéro</th>
+													<th scope="col" class="border-top-0">Image</th>
+													<th scope="col" class="border-top-0">Club</th>
+													<th scope="col" class="border-top-0">Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<% players.forEach((player, index) => { %>
+
+												<tr>
+													<th scope="row"><%= player.id %></th>
+													<td><%= player.firstname %></td>
+													<td><%= player.lastname %></td>
+													<td><%= player.position %></td>
+													<td><%= player.number %></td>
+													<td>
+														<div class="avatar-group">
+															<a class="avatar avatar-sm" data-toggle="tooltip" href="#" data-original-title="" title="">
+																<img alt="images" class="rounded-circle" src="/assets/img/<%= player.image %>">
+															</a>
+														</div>
+													</td>
+													<td><%= player.club_id %></td>
+											
+
+
+													<td>
+														<a class="btn btn-sm btn-primary" href="#"><i class="fa fa-edit"></i> Edit</a>
+														<a class="btn btn-sm btn-danger" href="#"><i class="fa fa-trash"></i> Delete</a>
+													</td>
+
+												</tr>
+
+												<% }) %>
+
+											</tbody>
+										</table>
+
+										<% } else { %>
+
+											<p>Il n'ya pas de joueurs, <a href="#">Ajouter un joueur </a></p>
+
+											<% } %>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-xl-12 col-lg-12 col-md-12">
+								<div class="card">
+									<div class="card-header custom-header">
+										<div>
+											<h3 class="card-title"><%= totalUsers %> utilisateurs</h3>
+											<h6 class="card-subtitle">Over of this week</h6>
+										</div>
+										<div class="card-options">
+											<a href="" class="mr-4 text-default" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+												<span class="fa fa-ellipsis-v"></span>
+											</a>
+											<ul class="dropdown-menu dropdown-menu-right" role="menu">
+												<li><a href="#"><i class="si si-plus mr-2"></i>Add</a></li>
+												<li><a href="#"><i class="si si-trash mr-2"></i>Remove</a></li>
+												<li><a href="#"><i class="si si-eye mr-2"></i>View</a></li>
+												<li><a href="#"><i class="si si-settings mr-2"></i>More</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="table-responsive">
+
+										<% if (users.length > 0) { %>
+
+
+											<table class="table table-bordered text-nowrap mb-0">
+												<thead>
+													<tr>
+														<th>ID</th>
+														<th>Prénom</th>
+														<th>Nom</th>
+														<th>Email</th>
+														<th>Status</th>
+													</tr>
+												</thead>
+												<tbody>
+
+													<% users.forEach((user, index) => { %>
+
+													<tr>
+														<td><%= user.id %></td>
+														<td><%= user.firstname %></td>
+														<td><%= user.lastname %></td>
+														<td><%= user.email %></td>
+														<td><span class="badge badge-success">Available</span></td>
+													</tr>
+												
+													<% }) %>
+
+												</tbody>
+											</table>
+
+											<% } else { %>
+
+												<p>Il n'ya pas d'utilisateurs, <a href="#">Ajouter un utilisateur </a></p>
+
+												<% } %>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div><!--End side app-->
+
+					<!-- Right-sidebar-->
+					<div class="sidebar sidebar-right sidebar-animate">
+						
+						<div class="panel-body tabs-menu-body side-tab-body p-0 border-0 ">
+							<div class="tab-content border-top">
+								<div class="tab-pane active " id="tab">
+									<div class="card-body p-0">
+										<div class="header-user text-center mt-4 pb-4">
+											<div class="dropdown-item text-center font-weight-semibold user h3 mb-0"><%= firstname %></div>
+											<small>Administrateur</small>
+										
+										</div>
+										
+										<div class="card-body border-top">
+											<div class="row">
+												
+												<div class="col-6 text-center">
+													<a class="" href=""><i class="dropdown-icon mdi mdi-tune fs-30 m-0 leading-tight"></i></a>
+													<div>Paramètre</div>
+												</div>
+												<div class="col-6 text-center">
+													<form action="/auth/logout" method="post">
+														<i class="dropdown-icon mdi mdi-logout-variant fs-30 m-0 leading-tight"></i>
+														<button class="btn btn-primary btn-block">Se déconnecter</button>
+													 </form>
+												</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div><!-- End Rightsidebar-->
+
+					<!--footer-->
+					<footer class="footer">
+						<div class="container">
+							<div class="row align-items-center flex-row-reverse">
+								<div class="col-lg-12 col-sm-12   text-center">
+									Copyright © 2019 <a href="#">Hogo</a>. Designed by <a href="https://www.spruko.com/">Spruko</a> All rights reserved.
+								</div>
+							</div>
+						</div>
+					</footer>
+					<!-- End Footer-->
+
+				</div>
+				<!-- End app-content-->
+			</div>
+		</div>
+    <!-- End Page -->
+    
+    <%- include('../partials/admin/script.ejs') %>

@@ -1,0 +1,152 @@
+<%- include('partials/header.ejs') %>
+
+
+<div class="loader-bg">
+    <div class="loader-bar"></div>
+</div>
+
+<div id="pcoded" class="pcoded">
+    <div class="pcoded-overlay-box"></div>
+    <div class="pcoded-container navbar-wrapper">
+
+        <%- include('partials/navbar.ejs') %>
+
+        <div class="pcoded-main-container">
+            <div class="pcoded-wrapper">
+
+                <%- include('partials/sidebar.ejs') %>
+
+                <div class="pcoded-content">
+
+                    <div class="page-header card">
+                        <div class="row align-items-end">
+                            <div class="col-lg-8">
+                                <div class="page-header-title">
+                                    <i class="feather icon-clipboard bg-c-blue"></i>
+                                    <div class="d-inline">
+                                        <h5>Basic Form Inputs</h5>
+                                        <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="page-header-breadcrumb">
+                                    <ul class=" breadcrumb breadcrumb-title">
+                                        <li class="breadcrumb-item">
+                                            <a href="index.html"><i class="feather icon-home"></i></a>
+                                        </li>
+                                        <li class="breadcrumb-item"><a href="#!">Form Components</a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <a href="#!">Basic Form Inputs</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pcoded-inner-content">
+
+                        <div class="main-body">
+                            <div class="page-wrapper">
+
+                                <div class="page-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5>Basic Form Inputs</h5>
+                                                    <span>Add class of <code>.form-control</code> with
+                                                        <code>&lt;input&gt;</code> tag</span>
+                                                </div>
+                                                <div class="card-block">
+                                                    <h4 class="sub-title">Basic Inputs</h4>
+
+                                                    <% if (player) { %>
+
+                                                    <form action="" method="post" enctype="multipart/form-data">
+                                                        
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Nom</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" name="lastname" class="form-control" value="<%= player.lastname %>">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Prénom</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" name="firstname" class="form-control" value="<%= player.firstname %>">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Postion actuelle : <%= player.position %>, Sélectionnez la position</label>
+                                                            <div class="col-sm-10">
+                                                                <select name="position" class="form-control" value="<%= player.position %>" >
+                                                                    <option>Select
+                                                                    </option>
+                                                                    <option value="Attaquant">Attaquant</option>
+                                                                    <option value="Défenseur">Défenseur</option>
+                                                           
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Numéro actuel : <%= player.number %>,Numéro</label>
+                                                            <div class="col-sm-10">
+                                                                <input name="number" type="text" class="form-control" value="<%= player.number %>"
+                                                                    placeholder="MAximum 2"
+                                                                    maxlength="2">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Envoyer une photo</label>
+                                                            <img src="/assets/img/<%= player.image %>" class="rounded-circle player-img" alt="">
+                                                            <div class="col-sm-10">
+                                                                <input value="<%= player.image %>" name="image" type="file" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <button type="submit" >Mettre à jour</button>
+
+                                                    </form>
+                                                    <% } else { %>
+                                                      <p class="text-center">Pas de joueur.<a href="/players/add">Ajouter un joueur.</a></p>
+                                                  <% } %>
+
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div id="styleSelector">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<%- include('partials/footer.ejs') %>
+
+</body>
+
+</html>
