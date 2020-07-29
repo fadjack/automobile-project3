@@ -6,6 +6,7 @@ router.get('/', homeController.getHomePage);
 router.get('/Pagesingle/:id', homeController.getcarSingle);
 router.get('/apisearch', homeController.search);
 
+
 module.exports = router;
 
 

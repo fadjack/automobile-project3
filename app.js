@@ -86,7 +86,6 @@ app.use('/user',userRoute )
 //app.use('/car', carsRoutes)
 
 // Front
-
 app.use('/manufacturer', manufacturersRoutes);
 app.use('/', homeRoutes);
 

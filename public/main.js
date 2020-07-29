@@ -3,7 +3,7 @@ const results = document.getElementById('results');
 let search_term = '';
 let cars;
 const fetchcars = async () => {
-  cars = await fetch('http://localhost:4000/apisearch')
+  cars = await fetch('http://localhost:3000/apisearch')
     .then(res => res.json());
 	// console.log(products);
 }
