@@ -466,7 +466,7 @@ textarea.border-form-control {
 	color: #555 !important;
 	font-size: 13px;
 	font-weight: 400;
-	padding-top: 1px;
+	padding-top: 0px;
 }
 
 .dark .form-control:not(.not-dark), .dark .sm-form-control:not(.not-dark) { border-color: rgba(255, 255, 255, 0.5) }

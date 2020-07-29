@@ -2224,9 +2224,9 @@ input[type=checkbox]:checked + label:before {
     display: block;
     font-size: 15px;
     height: inherit;
-    line-height: 48px;
+    line-height: 40px;
     text-align: center;
-    width: 48px;
+    width: 40px;
     border-left: 1px solid #e5e5e5;
     color: #535353;
 }

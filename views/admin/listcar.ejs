@@ -1,0 +1,119 @@
+<%- include('../partials/admin/head.ejs') %>
+
+
+
+<body>
+
+    <!-- main wrapper -->
+
+    <div class="dashboard-main-wrapper">
+
+        <!-- navbar -->
+
+        <%- include('../partials/admin/menu.ejs') %>
+
+        <!-- end navbar -->
+
+
+        <!-- left sidebar -->
+
+        <%- include('../partials/admin/sidebar.ejs') %>
+
+        <!-- end left sidebar -->
+
+
+        <!-- wrapper  -->
+
+        <div class="dashboard-wrapper">
+            <div class="container-fluid  dashboard-content">
+
+                <!-- pagehader  -->
+
+
+
+
+                <div class="row">
+
+                    <!-- top selling products  -->
+
+                    <div class="col-md-12">
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="text-muted">Total utilisateur</h5>
+                                    <div class="metric-value d-inline-block">
+
+
+                                    </div>
+                                    <div class="metric-label d-inline-block float-right text-success">
+
+                                    </div>
+                                </div>
+                                <div id="sparkline-1"></div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h5 class="card-header">Liste des voitures</h5>
+                            <div class="card-body p-0">
+                                <div class="table-responsive"></div>
+
+                                <table class="table">
+                                    <thead class="bg-light">
+                                        <tr class="border-0">
+                                            <th class="border-0">car_id</th>
+                                            <th class="border-0">Nom</th>
+                                            <th class="border-0">Etat</th>
+                                            <th class="border-0">prix </th>
+                                            <th class="border-0">kilométrage</th>
+                                            <th class="border-0">couleur</th>
+                                            <th class="border-0">année</th>
+                                            <th class="border-0">carburant</th>
+                                            <th class="border-0">catégorie</th>
+                                            <th class="border-0">fabricant</th>
+                                            <th class="border-0">utilisateur</th>
+                                            <th class="border-0">date et heure</th>
+                                            <th class="border-0">image</th>
+                                            <th class="border-0">bouton</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <%cars.forEach(function(car) {%>
+                                        <tr>
+                                            <td><%=car.car_id%></td>
+                                            <td><%=car.name%></td>
+                                            <td><%=car.content%></td>
+                                            <td><%=car.price%></td>
+                                            <td><%=car.kilometre%></td>
+                                            <td><%=car.color%></td>
+                                            <td><%=car.year%></td>
+                                            <td><%=car.carburant%></td>
+                                            <td><%=car.catégorie%></td>
+                                            <td><%=car.fabricant%></td>
+                                            <td><%=car.utilisateur%></td>
+                                            <td><%=car.created_at%></td>
+                                            <td>
+
+                                            </td>
+                                            <td>
+                                                <p class="text-center"><a href="/admin/car"></a></p>
+
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td> </td>
+
+                                        </tr>
+
+                                        <%});%>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <%- include('../partials/admin/script.ejs') %>

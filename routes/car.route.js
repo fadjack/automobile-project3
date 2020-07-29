@@ -2,14 +2,17 @@
 const express = require("express")
 const router = express.Router();
 const carController = require('../controllers/cars.controller')
-
+/*
 // Get
-router.get('/add', carController.addcarPage);
-router.get('/edit/:id', carController.editcarPage);
+//router.get('/addcar', carController.addcarPage);
+//router.get('/edit/:id', carController.editcarPage);
+//router.get('/delete/:id', carController.deletecar);
+//router.get('/cars/:id', carController.getcarSingle);
+
 
 // Post
-router.post('/add', carController.addcar);
-router.post('/edit/:id', carController.editcar);
-router.get('/delete/:id', carController.deletecar);
+//router.post('/addcar', carController.addcar);
+//router.post('/edit/:id', carController.editcar);
 
-module.exports = router;
+
+module.exports = router;*/

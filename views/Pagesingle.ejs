@@ -1,0 +1,48 @@
+
+ <div class="col-md-12" style="text-align: center; background-color: cadetblue;">
+  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+<% cars.forEach((car) => { %>
+    <div class="leftcolumn">
+      <div class="card">
+        <div class="div card-header">
+          <% if(car.name) {%>
+          <h5 class="card-title"><strong><%= car.name %></strong></h5>
+          <%} %>
+          
+        </div>
+        <% if(car.image) {%>
+        <img src="/images/360degree-cars/<%=car.image%>" alt="..." class="bd-placeholder-img card-img-top" height="340px">
+        <%} %>
+        <hr><br>
+        <p class="card-text">
+         
+          <% if(car.content) {%>
+          Contenu : <%= car.content %><br>
+          <%} %> <% if(car.price) {%>
+          Prix : <%= car.price %><br>
+          <%} %> <% if(car.kilometre) {%>
+            kilometre : <%= car.kilometre %><br>
+            <%} %> <% if(car.year) {%>
+            année : <%= car.year %><br>
+            <%} %> <% if(car.color) {%>
+           couleur : <%= car.color %><br>
+          <%} %> <% if(car.fuel_id) {%>
+            carburant : <%= car.carburant%><br>
+          <%} %> <% if(car.category_id) {%>
+          Categorie : <%= car.categorie%><br>
+          <%} %> <% if(car.manufacturer_id) {%>
+            fabricant : <%= car.fabricant%><br>
+            <%} %>
+        <div class="btn-group">
+          <a href="/"><button type="button" class="btn btn-sm btn-outline-secondary">retour</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <% }) %>
+
+
+               
+    

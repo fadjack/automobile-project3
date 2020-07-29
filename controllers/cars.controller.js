@@ -1,17 +1,17 @@
-const fs = require('fs');
+/*const fs = require('fs');
 
 exports.addcarPage = (req, res) => {
 
-    let query = "SELECT * FROM `manufacturer` ORDER BY name ASC"; 
+    let query = "SELECT * FROM `cars` ORDER BY name ASC"; 
 
     db.query(query, (err, result) => {
         if (err) {
             res.redirect('/');
         }
 
-        res.render('add-car.ejs', {
+        res.render('admin/addcar.ejs', {
             title: "Ajouter une voiture",
-            manufacturers: result
+            cars: result
         });
     });
 };
@@ -21,26 +21,29 @@ exports.addcar = (req, res) => {
       return res.status(400).send("Pas de fichier envoyé");
   }
 
-
-
   let name = req.body.name;
   let content = req.body.content;
   let price = req.body.price;
   //let image = req.body.image;
-  let kilometre = q.body.kilometre
+  let kilometre = req.body.kilometre;
+  let couleur = req.body.couleur;
+  let categorie = req.body.categorie;
+  let fabricant = req.body.fabricant;
   let uploadedFile = req.files.image;
   let image = uploadedFile.name;
   let fileExtension = uploadedFile.mimetype.split('/')[1];
-  image = name + '-'  + fileExtension;
-  let manufacturer = req.body.manufacturer;
+  image = '/images/360degree-cars/' + name + Date.now() + '.' + fileExtension;
+  console.log("image,", image);
+//  let manufacturer = req.body.manufacturer;
+  
   
       if (uploadedFile.mimetype === 'image/png' || uploadedFile.mimetype === 'image/jpeg' || uploadedFile.mimetype === 'image/gif') {
         uploadedFile.mv(`public/images/360degree-cars/${image}`, (err ) => {
             if (err) {
                 return res.status(500).send(err);
             }
-            let query = "INSERT INTO `cars` (name,content, price, image, kilometre, manufacturer_id) VALUES ('" +
-            name + "', '" + content + "', '" + price + "', '" + image + "', '" + kilometre + "', '" + manufacturer + "')";
+            let query = "INSERT INTO `cars` (name,content, price, image, kilometre,couleur,categorie, fabricant) VALUES ('" +
+            name + "', '" + content + "', '" + price + "', '" + image + "', '" + kilometre + "', '" + couleur + "', '" + categorie + "' '" + fabricant + "')";
             db.query(query, (err, result) => {
                 if (err) {
                     return res.status(500).send(err);
@@ -50,23 +53,23 @@ exports.addcar = (req, res) => {
         });
     } else {
         message = "Fichier image invalide";
-        res.render('add-car.ejs', {
+        res.render('admin/addcar.ejs', {
             message,
-            title: "Ajouter un constructeur"
+            title: "Ajouter une voiture"
         });
     }
   }
 
   exports.editcarPage = (req, res) => {
     let carId = req.params.id;
-    let query = "SELECT * FROM `cars` WHERE id = '" + carId + "' ";
+    let query = "SELECT * FROM `cars` WHERE car_id = '" + carId + "' ";
     db.query(query, (err, result) => {
         if (err) {
             return res.status(500).send(err);
         }
-        res.render('edit-car.ejs', {
-            title: "Editer un constructeur",
-            car: result[0],
+        res.render('admin/editcar.ejs', {
+            title: "Editer une voiture",
+            cars: result[0],
         });
     });
 }
@@ -103,8 +106,7 @@ exports.deletecar = (req, res) => {
       }
 
       let image = result[0].image;
-
-      fs.unlink(`public/assets/img/${image}`, (err) => {
+      fs.unlink(`public/images/360degree-cars/${image}`, (err) => {
           if (err) {
               return res.status(500).send(err);
           }
@@ -116,4 +118,4 @@ exports.deletecar = (req, res) => {
           });
       });
   });
-}
+}*/

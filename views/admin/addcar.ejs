@@ -1,0 +1,225 @@
+<%- include('../partials/admin/head.ejs') %>
+
+
+
+<body>
+
+  <!-- main wrapper -->
+
+  <div class="dashboard-main-wrapper">
+
+    <!-- navbar -->
+
+    <%- include('../partials/admin/menu.ejs') %>
+
+    <!-- end navbar -->
+
+
+    <!-- left sidebar -->
+
+    <%- include('../partials/admin/sidebar.ejs') %>
+
+    <!-- end left sidebar -->
+
+
+    <!-- wrapper  -->
+
+    <div class="dashboard-wrapper">
+      <div class="container-fluid  dashboard-content">
+
+        <!-- pagehader  -->
+
+        <div class="row">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="section-block" id="basicform">
+              <h3 class="section-title">Formulaire ajouter une voiture</h3>
+
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <form action="" method="post" enctype="multipart/form-data">
+
+                  <div class="form-group">
+                    <label for="name" class="col-form-label">Nom</label>
+                    <input id="inputText3" type="text" name="name" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="content" class="col-form-label">Contenu</label>
+                    <input id="inputText3" type="text" name="content" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="price" class="col-form-label">Prix</label>
+                    <input id="inputText3" type="text" name="price" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="kilometre" class="col-form-label">Kilométrage</label>
+                    <input id="inputText3" type="text" name="kilometre" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="color" class="col-form-label">Couleur</label>
+                    <input id="inputText3" type="text" name="color" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="year" class="col-form-label">année</label>
+                    <input id="inputText3" type="text" name="year" class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="input-select">Carburant</label>
+                    <select name="fuel_id" class="form-control" id="input-select">
+                      <% fuelsList.forEach(function(fuel) {%>
+                      <option value="<%=fuel.fuel_id%>"><%=fuel.name%></option>
+                      <%});%>
+
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="input-select">Catègorie</label>
+                    <select name="category_id" class="form-control" id="input-select">
+                      <% categoriesList.forEach(function(category) {%>
+                      <option value="<%=category.category_id %>"><%=category.name%></option>
+                      <%});%>
+
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="input-select">Fabricant</label>
+                    <select name="manufacturer_id" class="form-control" id="input-select">
+                      <% manufacturersList.forEach(function(manufacturer) {%>
+                      <option value="<%=manufacturer.manufacturer_id %>"><%=manufacturer.name%></option>
+                      <%});%>
+                    </select>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Envoyer une photo</label>
+                    <div class="col-sm-10">
+                      <input name="image" type="file" class="form-control">
+                    </div>
+                  </div>
+                  <button type="submit">Ajouter une voiture</button>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <%- include('../partials/admin/script.ejs') %>
+
+
+
+
+    </html>
+
+
+
+    <!--
+    
+            <div class="row">
+    
+              <div class="col-md-12">
+    
+                <form action="" method="post" enctype="multipart/form-data">
+      
+                  <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Nom</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="name" class="form-control">
+                    </div>
+                    <div class="col-sm-10">
+                      <label class="col-sm-2 col-form-label">contenu</label>
+                      <input type="text" name="content" class="form-control">
+                    </div>
+      
+      
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Price</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="price" class="form-control">
+                    </div>
+      
+                    <div class="col-sm-10">
+                      <label class="col-sm-2 col-form-label">kilometre</label>
+                      <input type="text" name="kilometre" class="form-control">
+                    </div>
+                    <div class="col-sm-10">
+                      <label class="col-sm-2 col-form-label">couleur</label>
+                      <input type="text" name="couleur" class="form-control">
+                    </div>
+                  </div>
+      
+                  <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Carburant actuelle :, Sélectionnez carburant</label>
+                    <div class="col-sm-10">
+                      <select name="carburant" class="form-control">
+                        <option>Select
+                        </option>
+                        <option value="1">Diesel</option>
+                        <option value="2">Essence</option>
+                        <option value="3">Hybride</option>
+      
+      
+                      </select>
+                    </div>
+                  </div>
+      
+                  <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">catégorie actuelle : , Sélectionnez le categorie</label>
+                    <div class="col-sm-10">
+                      <select name="catégorie" class="form-control" value="">
+                        <option>Select
+                        </option>
+                        <option value="4x4,Suv">4x4,Suv</option>
+                        <option value="Coupé">Coupé</option>
+                        <option value="Citadine">Citadine</option>
+                        <option value="Sans permis">Sans permis</option>
+      
+      
+      
+                      </select>
+                    </div>
+                  </div>
+      
+                  <div class="form-group row">
+                    <label class="col-sm-2 col-form-label"> fabricant actuelle :, Sélectionnez fabricant</label>
+                    <div class="col-sm-10">
+                      <select name="fabricant" class="form-control" value="">
+                        <option>Select
+                        </option>
+                        <option value="Renault ">Renault </option>
+                        <option value="Renault ">Renault </option>
+                        <option value="Citreone ">Citreone </option>
+      
+                      </select>
+                    </div>
+                  </div>
+      
+      
+      
+      
+      
+                  <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Envoyer une photo</label>
+                    <div class="col-sm-10">
+                      <input name="image" type="file" class="form-control">
+                    </div>
+                  </div>
+      
+                  <button type="submit">Ajouter une voiture</button>
+      
+                </form>
+    
+              </div>
+    
+    
+    
+    
+            </div>
+          -->

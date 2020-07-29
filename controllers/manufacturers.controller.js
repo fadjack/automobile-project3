@@ -1,7 +1,9 @@
 const fs = require('fs');
 
 exports.addmanufacturerPage = (req, res) => {
+    const userId =  req.session.user_id;
   res.render('add-manufacturer.ejs', {
+      userId,
       title: "Ajouter un manufacturer",
   });
 };
